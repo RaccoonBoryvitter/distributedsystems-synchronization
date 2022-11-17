@@ -14,7 +14,7 @@ public class Counter {
 
     public synchronized void increment() throws InterruptedException {
         int a;
-        Thread.sleep(150);
+        Thread.sleep(100);
         a = value;
         a++;
         value = a;

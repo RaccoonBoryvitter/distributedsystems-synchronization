@@ -15,18 +15,30 @@ public class CompoundCounter {
 
     private final Object locker = new Object(); // just for locking
 
-    public void increment() throws InterruptedException {
+    public void incrementFirstPart() throws InterruptedException {
         synchronized(locker) {
-            Thread.sleep(150);
+            Thread.sleep(250);
             firstCounter++;
+        }
+    }
+    
+    public void incrementSecondPart() throws InterruptedException {
+        synchronized(locker) {
+            Thread.sleep(250);
             secondCounter++;
         }
     }
 
-    public void decrement() throws InterruptedException {
+    public void decrementFirstPart() throws InterruptedException {
         synchronized(locker) {
-            Thread.sleep(150);
+            Thread.sleep(250);
             firstCounter--;
+        }
+    }
+    
+    public void decrementSecondPart() throws InterruptedException {
+        synchronized(locker) {
+            Thread.sleep(250);
             secondCounter--;
         }
     }
@@ -36,7 +48,7 @@ public class CompoundCounter {
     }
     
     public int getSecondCounterValue() {
-        return firstCounter;
+        return secondCounter;
     }
 
 }

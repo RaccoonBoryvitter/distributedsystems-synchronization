@@ -5,6 +5,7 @@
 package com.github.redscarf.distributedsystems.synchronization.threads;
 
 import com.github.redscarf.distributedsystems.synchronization.counters.CompoundCounter;
+import com.github.redscarf.distributedsystems.synchronization.counters.Counter;
 
 /**
  *
@@ -15,7 +16,7 @@ public class MyThreadFactory {
     private final CompoundCounter counter = new CompoundCounter();
     
     public Thread createMyThread() {
-        System.out.println("Counter: " + counter);
+        System.out.println("The memory address of the counter: " + counter);
         return new Thread(new MyThread(counter));
     }
 }

@@ -23,21 +23,22 @@ public class MyThread implements Runnable {
 
     private void executeCounter() {
         try {
-            System.out.println("Incrementing in the thread \""
+            System.out.println("Executing operations in the thread \""
                 + threadName + "\" (ID: " + threadId + ")");
-            counter.increment();
+            counter.incrementFirstPart();
+            counter.decrementSecondPart();
         } catch (InterruptedException ex) {
             System.out.println("Interruption Exception is thrown in the thread \""
                     + threadName + "\" (ID: " + threadId + ")");
             ex.printStackTrace();
         }
 
-        System.out.println("First value counter after increment: " 
-                + counter.getFirstCounterValue() + " (name: \"" 
+        System.out.println("First counter value after increment: " 
+                + counter.getFirstCounterValue()+ " (name: \"" 
                 + threadName + "\", id: " + threadId + ")");
         
-        System.out.println("Second value counter after increment: " 
-                + counter.getFirstCounterValue() + " (name: \"" 
+        System.out.println("Second counter value after increment: " 
+                + counter.getSecondCounterValue()+ " (name: \"" 
                 + threadName + "\", id: " + threadId + ")");
     }
 
